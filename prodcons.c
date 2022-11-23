@@ -91,10 +91,10 @@ void * consumer(void * arg)
 
 int  produceItem()
 {
-    //printf("Produciendo item...\n");
+    printf("Produciendo item...\n");
     int item = rand()%N;
     usleep(rand()%500000);
-    //printf("Nuevo item: %d.\n", item);
+    printf("Nuevo item: %d.\n", item);
     return item;
 }
 
@@ -106,7 +106,7 @@ void insert_item(int item)
 
 int remove_item()
 {
-    //printf("Removiendo item...\n");
+    printf("Removiendo item...\n");
     usleep(rand()%500000);
     int item = items[pos-1];
     pos--;
@@ -116,5 +116,5 @@ int remove_item()
 
 void consume_item(int item)
 {
-    //printf("Consumiento el item: %d.\n",item);
+    printf("Consumiento el item: %d.\n",item);
 }
