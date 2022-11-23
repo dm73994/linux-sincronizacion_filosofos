@@ -1,5 +1,7 @@
 
-Elaborado por: Santigo Benitez Lopez <sbenitez@unicauca.edu.co>
+Elaborado por: 
+	Carlos David Mesa Martinez <cadmesa@unicauca.edu.co>
+	Anderson Camilo Bonilla Belalcazar <acbonilla@unicauca.edu.co>
 
 Se deberá desarrollar dos programas en C que implementen una solución
 

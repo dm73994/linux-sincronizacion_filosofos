@@ -1,0 +1,493 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Sincronizacion filosofos: Referencia del Archivo philosophers.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Sincronizacion filosofos
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">SF - Sincronizacion de filosofos en la mesa</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">defines</a> &#124;
+<a href="#typedef-members">typedefs</a> &#124;
+<a href="#enum-members">Enumeraciones</a> &#124;
+<a href="#func-members">Funciones</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia del Archivo philosophers.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;pthread.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;semaphore.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Dependencia gráfica adjunta para philosophers.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="philosophers_8c__incl.png" border="0" usemap="#aphilosophers_8c" alt=""/></div>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a437ef08681e7210d6678427030446a54"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="philosophers_8c.html#a437ef08681e7210d6678427030446a54">LEFT</a>&#160;&#160;&#160;(i+<a class="el" href="prodcons_8c.html#a7722c8ecbb62d99aee7ce68b1752f337">N</a>-1)%<a class="el" href="prodcons_8c.html#a7722c8ecbb62d99aee7ce68b1752f337">N</a></td></tr>
+<tr class="separator:a437ef08681e7210d6678427030446a54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80fb826a684cf3f0d306b22aa100ddac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="philosophers_8c.html#a80fb826a684cf3f0d306b22aa100ddac">RIGHT</a>&#160;&#160;&#160;(i+1)%<a class="el" href="prodcons_8c.html#a7722c8ecbb62d99aee7ce68b1752f337">N</a></td></tr>
+<tr class="separator:a80fb826a684cf3f0d306b22aa100ddac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0337592b74197133c4203f6dce657a76"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="philosophers_8c.html#a0337592b74197133c4203f6dce657a76">up</a>&#160;&#160;&#160;sem_post</td></tr>
+<tr class="separator:a0337592b74197133c4203f6dce657a76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a249d857dfa044493c7f29844b7b0baae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="philosophers_8c.html#a249d857dfa044493c7f29844b7b0baae">down</a>&#160;&#160;&#160;sem_wait</td></tr>
+<tr class="separator:a249d857dfa044493c7f29844b7b0baae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+typedefs</h2></td></tr>
+<tr class="memitem:ac6dd29c743e974e9c801a0eeb67e7a1b"><td class="memItemLeft" align="right" valign="top">typedef sem_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="philosophers_8c.html#ac6dd29c743e974e9c801a0eeb67e7a1b">semaphore</a></td></tr>
+<tr class="separator:ac6dd29c743e974e9c801a0eeb67e7a1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumeraciones</h2></td></tr>
+<tr class="memitem:a06fc87d81c62e9abb8790b6e5713c55b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="philosophers_8c.html#a06fc87d81c62e9abb8790b6e5713c55bacdcc3b280267cbca3553506db089ca58">HUNGRY</a>
+, <a class="el" href="philosophers_8c.html#a06fc87d81c62e9abb8790b6e5713c55ba7dea639cac54c049540bc4c3074749fa">EATING</a>
+, <a class="el" href="philosophers_8c.html#a06fc87d81c62e9abb8790b6e5713c55ba95fa912d68ac097a4a83d1b1f3527401">THINKING</a>
+ }</td></tr>
+<tr class="separator:a06fc87d81c62e9abb8790b6e5713c55b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a4c5728e52a74bb22b36dd49aa8bbad21"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="philosophers_8c.html#a4c5728e52a74bb22b36dd49aa8bbad21">philosopher</a> (void *arg)</td></tr>
+<tr class="memdesc:a4c5728e52a74bb22b36dd49aa8bbad21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Administra las acciones de los filósofos.  <a href="philosophers_8c.html#a4c5728e52a74bb22b36dd49aa8bbad21">Más...</a><br /></td></tr>
+<tr class="separator:a4c5728e52a74bb22b36dd49aa8bbad21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae03ce482a335aabf2362815a0bf5713f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="philosophers_8c.html#ae03ce482a335aabf2362815a0bf5713f">take_forks</a> (int i)</td></tr>
+<tr class="memdesc:ae03ce482a335aabf2362815a0bf5713f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza el estado de un filosofo a espera de tenedor y verifica si hay tenedores disponibles.  <a href="philosophers_8c.html#ae03ce482a335aabf2362815a0bf5713f">Más...</a><br /></td></tr>
+<tr class="separator:ae03ce482a335aabf2362815a0bf5713f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f6d1d349624c5e17abad11a03ecf18c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="philosophers_8c.html#a0f6d1d349624c5e17abad11a03ecf18c">put_forks</a> (int i)</td></tr>
+<tr class="memdesc:a0f6d1d349624c5e17abad11a03ecf18c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve los tenedores adyacentes y verifica si los filosofos adyacentes pueden comer.  <a href="philosophers_8c.html#a0f6d1d349624c5e17abad11a03ecf18c">Más...</a><br /></td></tr>
+<tr class="separator:a0f6d1d349624c5e17abad11a03ecf18c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a163226c0b843c57eca5d70c4a09173"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="philosophers_8c.html#a6a163226c0b843c57eca5d70c4a09173">test</a> (int i)</td></tr>
+<tr class="memdesc:a6a163226c0b843c57eca5d70c4a09173"><td class="mdescLeft">&#160;</td><td class="mdescRight">Revisa si los tenedores adyacentes se encuentran disponibles.  <a href="philosophers_8c.html#a6a163226c0b843c57eca5d70c4a09173">Más...</a><br /></td></tr>
+<tr class="separator:a6a163226c0b843c57eca5d70c4a09173"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cafa48965103a44ed00800c1c608e8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="philosophers_8c.html#a0cafa48965103a44ed00800c1c608e8c">think</a> (int i)</td></tr>
+<tr class="memdesc:a0cafa48965103a44ed00800c1c608e8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filosofo piensa.  <a href="philosophers_8c.html#a0cafa48965103a44ed00800c1c608e8c">Más...</a><br /></td></tr>
+<tr class="separator:a0cafa48965103a44ed00800c1c608e8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d74957a358bc5fb34df1bc613cff822"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="philosophers_8c.html#a7d74957a358bc5fb34df1bc613cff822">eat</a> (int i)</td></tr>
+<tr class="memdesc:a7d74957a358bc5fb34df1bc613cff822"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filosofo come.  <a href="philosophers_8c.html#a7d74957a358bc5fb34df1bc613cff822">Más...</a><br /></td></tr>
+<tr class="separator:a7d74957a358bc5fb34df1bc613cff822"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="philosophers_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
+<tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a33c4e702733185ebbc9e7f296bc71192"><td class="memItemLeft" align="right" valign="top">enum  { ... } &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="philosophers_8c.html#a33c4e702733185ebbc9e7f296bc71192">philosopher_states</a></td></tr>
+<tr class="separator:a33c4e702733185ebbc9e7f296bc71192"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a953198dc69ff02868b4513ae96d5f262"><td class="memItemLeft" align="right" valign="top"><a class="el" href="philosophers_8c.html#ac6dd29c743e974e9c801a0eeb67e7a1b">semaphore</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="philosophers_8c.html#a953198dc69ff02868b4513ae96d5f262">mutex</a></td></tr>
+<tr class="separator:a953198dc69ff02868b4513ae96d5f262"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b39b59871289862a5e910331834d1f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="philosophers_8c.html#ac6dd29c743e974e9c801a0eeb67e7a1b">semaphore</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="philosophers_8c.html#a0b39b59871289862a5e910331834d1f6">s</a></td></tr>
+<tr class="separator:a0b39b59871289862a5e910331834d1f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace50bce9d6e7ed2958418778a6b1711f"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="philosophers_8c.html#ace50bce9d6e7ed2958418778a6b1711f">state</a></td></tr>
+<tr class="separator:ace50bce9d6e7ed2958418778a6b1711f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7722c8ecbb62d99aee7ce68b1752f337"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="philosophers_8c.html#a7722c8ecbb62d99aee7ce68b1752f337">N</a></td></tr>
+<tr class="separator:a7722c8ecbb62d99aee7ce68b1752f337"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentación de los 'defines'</h2>
+<a id="a249d857dfa044493c7f29844b7b0baae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a249d857dfa044493c7f29844b7b0baae">&#9670;&nbsp;</a></span>down</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define down&#160;&#160;&#160;sem_wait</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a437ef08681e7210d6678427030446a54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a437ef08681e7210d6678427030446a54">&#9670;&nbsp;</a></span>LEFT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LEFT&#160;&#160;&#160;(i+<a class="el" href="prodcons_8c.html#a7722c8ecbb62d99aee7ce68b1752f337">N</a>-1)%<a class="el" href="prodcons_8c.html#a7722c8ecbb62d99aee7ce68b1752f337">N</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a80fb826a684cf3f0d306b22aa100ddac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80fb826a684cf3f0d306b22aa100ddac">&#9670;&nbsp;</a></span>RIGHT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RIGHT&#160;&#160;&#160;(i+1)%<a class="el" href="prodcons_8c.html#a7722c8ecbb62d99aee7ce68b1752f337">N</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0337592b74197133c4203f6dce657a76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0337592b74197133c4203f6dce657a76">&#9670;&nbsp;</a></span>up</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define up&#160;&#160;&#160;sem_post</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de los 'typedefs'</h2>
+<a id="ac6dd29c743e974e9c801a0eeb67e7a1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6dd29c743e974e9c801a0eeb67e7a1b">&#9670;&nbsp;</a></span>semaphore</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef sem_t <a class="el" href="philosophers_8c.html#ac6dd29c743e974e9c801a0eeb67e7a1b">semaphore</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las enumeraciones</h2>
+<a id="a06fc87d81c62e9abb8790b6e5713c55b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06fc87d81c62e9abb8790b6e5713c55b">&#9670;&nbsp;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="a06fc87d81c62e9abb8790b6e5713c55bacdcc3b280267cbca3553506db089ca58"></a>HUNGRY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a06fc87d81c62e9abb8790b6e5713c55ba7dea639cac54c049540bc4c3074749fa"></a>EATING&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a06fc87d81c62e9abb8790b6e5713c55ba95fa912d68ac097a4a83d1b1f3527401"></a>THINKING&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones</h2>
+<a id="a7d74957a358bc5fb34df1bc613cff822"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d74957a358bc5fb34df1bc613cff822">&#9670;&nbsp;</a></span>eat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void eat </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Filosofo come. </p>
+
+</div>
+</div>
+<a id="a0ddf1224851353fc92bfbff6f499fa97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ddf1224851353fc92bfbff6f499fa97">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>argv</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4c5728e52a74bb22b36dd49aa8bbad21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c5728e52a74bb22b36dd49aa8bbad21">&#9670;&nbsp;</a></span>philosopher()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * philosopher </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>arg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Administra las acciones de los filósofos. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>ID del filosofo </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd><br  />
+ </dd></dl>
+
+</div>
+</div>
+<a id="a0f6d1d349624c5e17abad11a03ecf18c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f6d1d349624c5e17abad11a03ecf18c">&#9670;&nbsp;</a></span>put_forks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void put_forks </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Devuelve los tenedores adyacentes y verifica si los filosofos adyacentes pueden comer. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td><br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae03ce482a335aabf2362815a0bf5713f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae03ce482a335aabf2362815a0bf5713f">&#9670;&nbsp;</a></span>take_forks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void take_forks </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Actualiza el estado de un filosofo a espera de tenedor y verifica si hay tenedores disponibles. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>ID del filósofo. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6a163226c0b843c57eca5d70c4a09173"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a163226c0b843c57eca5d70c4a09173">&#9670;&nbsp;</a></span>test()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Revisa si los tenedores adyacentes se encuentran disponibles. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td><br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0cafa48965103a44ed00800c1c608e8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cafa48965103a44ed00800c1c608e8c">&#9670;&nbsp;</a></span>think()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void think </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Filosofo piensa. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las variables</h2>
+<a id="a953198dc69ff02868b4513ae96d5f262"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a953198dc69ff02868b4513ae96d5f262">&#9670;&nbsp;</a></span>mutex</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="philosophers_8c.html#ac6dd29c743e974e9c801a0eeb67e7a1b">semaphore</a> mutex</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7722c8ecbb62d99aee7ce68b1752f337"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7722c8ecbb62d99aee7ce68b1752f337">&#9670;&nbsp;</a></span>N</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int N</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a33c4e702733185ebbc9e7f296bc71192"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33c4e702733185ebbc9e7f296bc71192">&#9670;&nbsp;</a></span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum { ... }  philosopher_states</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0b39b59871289862a5e910331834d1f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b39b59871289862a5e910331834d1f6">&#9670;&nbsp;</a></span>s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="philosophers_8c.html#ac6dd29c743e974e9c801a0eeb67e7a1b">semaphore</a>* s</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ace50bce9d6e7ed2958418778a6b1711f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace50bce9d6e7ed2958418778a6b1711f">&#9670;&nbsp;</a></span>state</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int* state</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

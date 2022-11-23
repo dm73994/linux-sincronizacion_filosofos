@@ -13,4 +13,4 @@ philosophers.o: philosophers.c
 	gcc -c -o philosophers.o philosophers.c
 
 clean:
-	rm -f *.o prodcons philosophers
+	rm -f -rf *.o prodcons philosophers html latex

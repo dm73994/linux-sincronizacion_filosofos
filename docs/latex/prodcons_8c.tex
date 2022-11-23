@@ -1,0 +1,161 @@
+\hypertarget{prodcons_8c}{}\doxysection{Referencia del Archivo prodcons.\+c}
+\label{prodcons_8c}\index{prodcons.c@{prodcons.c}}
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$semaphore.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+Dependencia gráfica adjunta para prodcons.\+c\+:
+% FIG 0
+\doxysubsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{prodcons_8c_a0337592b74197133c4203f6dce657a76}{up}}~sem\+\_\+post
+\item 
+\#define \mbox{\hyperlink{prodcons_8c_a249d857dfa044493c7f29844b7b0baae}{down}}~sem\+\_\+wait
+\end{DoxyCompactItemize}
+\doxysubsection*{typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef sem\+\_\+t \mbox{\hyperlink{prodcons_8c_ac6dd29c743e974e9c801a0eeb67e7a1b}{semaphore}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \mbox{\hyperlink{prodcons_8c_a68abbb5576aa6621142fb65938ffa534}{producer}} (void $\ast$arg)
+\item 
+void $\ast$ \mbox{\hyperlink{prodcons_8c_a85949868186f64acb38b00214ff35c0c}{consumer}} (void $\ast$arg)
+\item 
+int \mbox{\hyperlink{prodcons_8c_ae51a40a4773e707be25c3d2babee695c}{produce\+Item}} ()
+\item 
+void \mbox{\hyperlink{prodcons_8c_addcc1d66bd0310e8afad758d6fdcf93f}{insert\+\_\+item}} (int item)
+\item 
+int \mbox{\hyperlink{prodcons_8c_a2f67bacf1ff24d6928b151f465490df6}{remove\+\_\+item}} ()
+\item 
+void \mbox{\hyperlink{prodcons_8c_aeb93372cb8d89c63098b5fbe26676c45}{consume\+\_\+item}} (int item)
+\item 
+int \mbox{\hyperlink{prodcons_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{philosophers_8c_ac6dd29c743e974e9c801a0eeb67e7a1b}{semaphore}} \mbox{\hyperlink{prodcons_8c_a953198dc69ff02868b4513ae96d5f262}{mutex}}
+\item 
+\mbox{\hyperlink{philosophers_8c_ac6dd29c743e974e9c801a0eeb67e7a1b}{semaphore}} \mbox{\hyperlink{prodcons_8c_a33b4cf54ee36fa109026c1c071294f69}{empty}}
+\item 
+\mbox{\hyperlink{philosophers_8c_ac6dd29c743e974e9c801a0eeb67e7a1b}{semaphore}} \mbox{\hyperlink{prodcons_8c_a63b620d29abbd5ae7ae8e9da7330ccca}{full}}
+\item 
+int $\ast$ \mbox{\hyperlink{prodcons_8c_a59d9685ae9d7d28f6d1cd2e358d9b4c6}{items}}
+\item 
+int \mbox{\hyperlink{prodcons_8c_a1910d262855b71da353ed0d07a6c7823}{pos}}
+\item 
+int \mbox{\hyperlink{prodcons_8c_a7722c8ecbb62d99aee7ce68b1752f337}{N}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentación de los \textquotesingle{}defines\textquotesingle{}}
+\mbox{\Hypertarget{prodcons_8c_a249d857dfa044493c7f29844b7b0baae}\label{prodcons_8c_a249d857dfa044493c7f29844b7b0baae}} 
+\index{prodcons.c@{prodcons.c}!down@{down}}
+\index{down@{down}!prodcons.c@{prodcons.c}}
+\doxysubsubsection{\texorpdfstring{down}{down}}
+{\footnotesize\ttfamily \#define down~sem\+\_\+wait}
+
+\mbox{\Hypertarget{prodcons_8c_a0337592b74197133c4203f6dce657a76}\label{prodcons_8c_a0337592b74197133c4203f6dce657a76}} 
+\index{prodcons.c@{prodcons.c}!up@{up}}
+\index{up@{up}!prodcons.c@{prodcons.c}}
+\doxysubsubsection{\texorpdfstring{up}{up}}
+{\footnotesize\ttfamily \#define up~sem\+\_\+post}
+
+
+
+\doxysubsection{Documentación de los \textquotesingle{}typedefs\textquotesingle{}}
+\mbox{\Hypertarget{prodcons_8c_ac6dd29c743e974e9c801a0eeb67e7a1b}\label{prodcons_8c_ac6dd29c743e974e9c801a0eeb67e7a1b}} 
+\index{prodcons.c@{prodcons.c}!semaphore@{semaphore}}
+\index{semaphore@{semaphore}!prodcons.c@{prodcons.c}}
+\doxysubsubsection{\texorpdfstring{semaphore}{semaphore}}
+{\footnotesize\ttfamily typedef sem\+\_\+t \mbox{\hyperlink{philosophers_8c_ac6dd29c743e974e9c801a0eeb67e7a1b}{semaphore}}}
+
+
+
+\doxysubsection{Documentación de las funciones}
+\mbox{\Hypertarget{prodcons_8c_aeb93372cb8d89c63098b5fbe26676c45}\label{prodcons_8c_aeb93372cb8d89c63098b5fbe26676c45}} 
+\index{prodcons.c@{prodcons.c}!consume\_item@{consume\_item}}
+\index{consume\_item@{consume\_item}!prodcons.c@{prodcons.c}}
+\doxysubsubsection{\texorpdfstring{consume\_item()}{consume\_item()}}
+{\footnotesize\ttfamily void consume\+\_\+item (\begin{DoxyParamCaption}\item[{int}]{item }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{prodcons_8c_a85949868186f64acb38b00214ff35c0c}\label{prodcons_8c_a85949868186f64acb38b00214ff35c0c}} 
+\index{prodcons.c@{prodcons.c}!consumer@{consumer}}
+\index{consumer@{consumer}!prodcons.c@{prodcons.c}}
+\doxysubsubsection{\texorpdfstring{consumer()}{consumer()}}
+{\footnotesize\ttfamily void $\ast$ consumer (\begin{DoxyParamCaption}\item[{void $\ast$}]{arg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{prodcons_8c_addcc1d66bd0310e8afad758d6fdcf93f}\label{prodcons_8c_addcc1d66bd0310e8afad758d6fdcf93f}} 
+\index{prodcons.c@{prodcons.c}!insert\_item@{insert\_item}}
+\index{insert\_item@{insert\_item}!prodcons.c@{prodcons.c}}
+\doxysubsubsection{\texorpdfstring{insert\_item()}{insert\_item()}}
+{\footnotesize\ttfamily void insert\+\_\+item (\begin{DoxyParamCaption}\item[{int}]{item }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{prodcons_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{prodcons_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{prodcons.c@{prodcons.c}!main@{main}}
+\index{main@{main}!prodcons.c@{prodcons.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{prodcons_8c_ae51a40a4773e707be25c3d2babee695c}\label{prodcons_8c_ae51a40a4773e707be25c3d2babee695c}} 
+\index{prodcons.c@{prodcons.c}!produceItem@{produceItem}}
+\index{produceItem@{produceItem}!prodcons.c@{prodcons.c}}
+\doxysubsubsection{\texorpdfstring{produceItem()}{produceItem()}}
+{\footnotesize\ttfamily int produce\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{prodcons_8c_a68abbb5576aa6621142fb65938ffa534}\label{prodcons_8c_a68abbb5576aa6621142fb65938ffa534}} 
+\index{prodcons.c@{prodcons.c}!producer@{producer}}
+\index{producer@{producer}!prodcons.c@{prodcons.c}}
+\doxysubsubsection{\texorpdfstring{producer()}{producer()}}
+{\footnotesize\ttfamily void $\ast$ producer (\begin{DoxyParamCaption}\item[{void $\ast$}]{arg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{prodcons_8c_a2f67bacf1ff24d6928b151f465490df6}\label{prodcons_8c_a2f67bacf1ff24d6928b151f465490df6}} 
+\index{prodcons.c@{prodcons.c}!remove\_item@{remove\_item}}
+\index{remove\_item@{remove\_item}!prodcons.c@{prodcons.c}}
+\doxysubsubsection{\texorpdfstring{remove\_item()}{remove\_item()}}
+{\footnotesize\ttfamily int remove\+\_\+item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Documentación de las variables}
+\mbox{\Hypertarget{prodcons_8c_a33b4cf54ee36fa109026c1c071294f69}\label{prodcons_8c_a33b4cf54ee36fa109026c1c071294f69}} 
+\index{prodcons.c@{prodcons.c}!empty@{empty}}
+\index{empty@{empty}!prodcons.c@{prodcons.c}}
+\doxysubsubsection{\texorpdfstring{empty}{empty}}
+{\footnotesize\ttfamily \mbox{\hyperlink{philosophers_8c_ac6dd29c743e974e9c801a0eeb67e7a1b}{semaphore}} empty}
+
+\mbox{\Hypertarget{prodcons_8c_a63b620d29abbd5ae7ae8e9da7330ccca}\label{prodcons_8c_a63b620d29abbd5ae7ae8e9da7330ccca}} 
+\index{prodcons.c@{prodcons.c}!full@{full}}
+\index{full@{full}!prodcons.c@{prodcons.c}}
+\doxysubsubsection{\texorpdfstring{full}{full}}
+{\footnotesize\ttfamily \mbox{\hyperlink{philosophers_8c_ac6dd29c743e974e9c801a0eeb67e7a1b}{semaphore}} full}
+
+\mbox{\Hypertarget{prodcons_8c_a59d9685ae9d7d28f6d1cd2e358d9b4c6}\label{prodcons_8c_a59d9685ae9d7d28f6d1cd2e358d9b4c6}} 
+\index{prodcons.c@{prodcons.c}!items@{items}}
+\index{items@{items}!prodcons.c@{prodcons.c}}
+\doxysubsubsection{\texorpdfstring{items}{items}}
+{\footnotesize\ttfamily int$\ast$ items}
+
+\mbox{\Hypertarget{prodcons_8c_a953198dc69ff02868b4513ae96d5f262}\label{prodcons_8c_a953198dc69ff02868b4513ae96d5f262}} 
+\index{prodcons.c@{prodcons.c}!mutex@{mutex}}
+\index{mutex@{mutex}!prodcons.c@{prodcons.c}}
+\doxysubsubsection{\texorpdfstring{mutex}{mutex}}
+{\footnotesize\ttfamily \mbox{\hyperlink{philosophers_8c_ac6dd29c743e974e9c801a0eeb67e7a1b}{semaphore}} mutex}
+
+\mbox{\Hypertarget{prodcons_8c_a7722c8ecbb62d99aee7ce68b1752f337}\label{prodcons_8c_a7722c8ecbb62d99aee7ce68b1752f337}} 
+\index{prodcons.c@{prodcons.c}!N@{N}}
+\index{N@{N}!prodcons.c@{prodcons.c}}
+\doxysubsubsection{\texorpdfstring{N}{N}}
+{\footnotesize\ttfamily int N}
+
+\mbox{\Hypertarget{prodcons_8c_a1910d262855b71da353ed0d07a6c7823}\label{prodcons_8c_a1910d262855b71da353ed0d07a6c7823}} 
+\index{prodcons.c@{prodcons.c}!pos@{pos}}
+\index{pos@{pos}!prodcons.c@{prodcons.c}}
+\doxysubsubsection{\texorpdfstring{pos}{pos}}
+{\footnotesize\ttfamily int pos}
+

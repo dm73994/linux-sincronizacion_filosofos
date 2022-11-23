@@ -26,7 +26,7 @@ int N;
 /// @brief Administra las acciones de los filósofos.
 /// @param i ID del filosofo
 /// @return 
-void * philosopher(int i);
+void * philosopher(void*arg);
 
 /// @brief Actualiza el estado de un filosofo a espera de tenedor y verifica si hay tenedores disponibles.
 /// @param i ID del filósofo.
@@ -75,21 +75,20 @@ int main(int argc, char* argv[])
     {
         sem_init(&s[i],0,0);
         state[i] = THINKING;
-        ids[i] = i+1;
+        ids[i] = i;
     }
     sem_init(&mutex,0,1);
     for(int i = 0; i < N; i++)
     {
-        printf("[%d] entre\n",i);   
-        pthread_create(&philosopher_id[i],NULL,philosopher(i),&ids[i]);
-        printf("[%d] pase\n",i);   
+        pthread_create(&philosopher_id[i],NULL,philosopher,&ids[i]);
     }
-    sleep(1);
+    usleep(50000);
     exit(EXIT_SUCCESS);
 }
 
-void * philosopher(int i)
+void * philosopher(void*arg)
 {
+    int i = *(int*)arg;
     while(1)
     {
         think(i);
@@ -103,6 +102,7 @@ void take_forks(int i)
 {
     down(&mutex);
     state[i] = HUNGRY;
+    printf("[%d] esta tomando los tenedores\n" , i);
     test(i);
     up(&mutex);
     down(&s[i]);
@@ -112,6 +112,7 @@ void put_forks(int i)
 {
     down(&mutex);
     state[i] = THINKING;
+    printf("[%d] esta soltando los tenedores\n" , i);
     test(LEFT);
     test(RIGHT);
     up(&mutex);
@@ -119,20 +120,22 @@ void put_forks(int i)
 
 void test(int i)
 {
+//    down(&mutex);
     if(state[i] == HUNGRY && state[LEFT] != EATING && state[RIGHT] != EATING)
     {
-        state[i] = EATING;
-        up(&s[i]);
+	state[i] = EATING;	
+    	up(&s[i]);
     }
+  //  up(&mutex);
 }
 void think(int i)
 {
     printf("[%d]Estoy pensando\n",i);
-    usleep(rand()%200000);
+    usleep(rand()%20000);
 }
 
 void eat(int i)
 {
-    printf("[%d]Estoy comiendo\n", i);
-    usleep(rand()%200000);   
+    printf("[%d] Estoy comiendo\n", i);
+    usleep(rand()%20000);   
 }
